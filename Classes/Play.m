@@ -1,6 +1,6 @@
 /*
-     File: RootViewController.m
- Abstract: A table view controller to display a list of names of plays.
+     File: Play.m
+ Abstract: A simple class to represent information about a play.
   Version: 2.7
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
@@ -45,83 +45,20 @@
  
  */
 
-#import "RootViewController.h"
-#import "DataController.h"
-#import "DetailViewController.h"
 #import "Play.h"
 
 
-@implementation RootViewController
+@implementation Play
 
-@synthesize dataController;
+@synthesize title, characters, genre, date;
 
-#pragma mark -
-#pragma mark View lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	self.title = NSLocalizedString(@"Plays", @"Master view navigation title");
-}
-
-
-#pragma mark -
-#pragma mark Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Only one section.
-    return 1;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Only one section, so return the number of items in the list.
-    return [dataController countOfList];
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	static NSString *CellIdentifier = @"CellIdentifier";
-	
-	// Dequeue or create a cell of the appropriate type.
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
-    // Get the object to display and set the value in the cell.
-    Play *playAtIndex = [dataController objectInListAtIndex:indexPath.row];
-    cell.textLabel.text = playAtIndex.title;
-    return cell;
-}
-
-
-#pragma mark -
-#pragma mark Table view selection
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    /*
-     When a row is selected, create the detail view controller and set its detail item to the item associated with the selected row.
-     */
-    DetailViewController *detailViewController = [[DetailViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    
-    detailViewController.play = [dataController objectInListAtIndex:indexPath.row];
-    
-    // Push the detail view controller.
-    [[self navigationController] pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-}
-
-
-#pragma mark -
-#pragma mark Memory management
 
 - (void)dealloc {
-    
-    [dataController release];
-    [super dealloc];
+	[title release];
+	[characters release];
+	[genre release];
+	[date release];
+	[super dealloc];
 }
 
 @end
