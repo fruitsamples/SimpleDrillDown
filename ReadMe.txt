@@ -10,12 +10,12 @@ The first screen shows a list of plays. When the user selects a play, the applic
 ================================================================================
 BUILD REQUIREMENTS:
 
-Mac OS X 10.5.6 or later, iPhone SDK 3.0
+iOS 4.0 SDK
 
 ================================================================================
 RUNTIME REQUIREMENTS:
 
-Mac OS X 10.5.6 or later, iPhone SDK 3.0
+iPhone OS 3.2 or later
 
 ================================================================================
 PACKAGING LIST:
@@ -44,6 +44,9 @@ The xib file containing the application's main window.
 
 ================================================================================
 CHANGES FROM PREVIOUS VERSIONS:
+
+Version 2.8
+- Upgraded project to build with the iOS 4.0 SDK.
 
 Version 2.7
 - Upgraded for 3.0 SDK due to deprecated APIs; in "cellForRowAtIndexPath:" it now uses UITableViewCell's initWithStyle.
@@ -74,4 +77,4 @@ Version 2.0
 - The samples now use nib files and UITableViewController; they also adopt the new pattern for table cell reuse.
 
 ================================================================================
-Copyright (C) 2008-2009 Apple Inc. All rights reserved.
+Copyright (C) 2008-2010 Apple Inc. All rights reserved.
