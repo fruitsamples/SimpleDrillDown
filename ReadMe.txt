@@ -52,6 +52,9 @@ The application's main storyboard.
 ================================================================================
 CHANGES FROM PREVIOUS VERSIONS:
 
+Version 3.1
+- Corrected table view cell style to be Basic instead of Custom.
+
 Version 3.0
 - Upgraded to use ARC and storyboards.
 

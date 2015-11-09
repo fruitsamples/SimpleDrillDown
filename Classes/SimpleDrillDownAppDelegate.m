@@ -1,7 +1,7 @@
 /*
      File: SimpleDrillDownAppDelegate.m
  Abstract: n/a
-  Version: 3.0
+  Version: 3.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -41,7 +41,7 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2011 Apple Inc. All Rights Reserved.
+ Copyright (C) 2012 Apple Inc. All Rights Reserved.
  
  */
 
@@ -68,7 +68,7 @@
 
     // Create the data controller and pass it to the root view controller.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
+    RootViewController *rootViewController = (RootViewController *)[[navigationController viewControllers]objectAtIndex:0];
     
     DataController *controller = [[DataController alloc] init];
     rootViewController.dataController = controller;

@@ -2,7 +2,7 @@
      File: DataController.m
  Abstract: A simple controller class responsible for managing the application's data.
  Typically this object would be able to load and save a file containing the appliction's data. This example illustrates just the basic minimum: it creates an array containing information about some plays and provides simple accessor methods for the array and its contents.
-  Version: 3.0
+  Version: 3.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -42,7 +42,7 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2011 Apple Inc. All Rights Reserved.
+ Copyright (C) 2012 Apple Inc. All Rights Reserved.
  
  */
 
@@ -68,14 +68,14 @@
     return self;
 }
 
-// Custom set accessor to ensure the new list is mutable
+// Custom set accessor to ensure the new list is mutable.
 - (void)setList:(NSMutableArray *)newList {
     if (list != newList) {
         list = [newList mutableCopy];
     }
 }
 
-// Accessor methods for list
+// Accessor methods for list.
 - (unsigned)countOfList {
     return [list count];
 }
@@ -102,7 +102,7 @@
     
 	play = [[Play alloc] init];
 	play.title = @"Julius Caesar";
-	play.genre = @"Tragegy";
+	play.genre = @"Tragedy";
 	[dateComponents setYear:1599];
 	play.date = [calendar dateFromComponents:dateComponents];
 	characters = [[NSArray alloc] initWithObjects:@"Antony", @"Artemidorus", @"Brutus", @"Caesar", @"Calpurnia", @"Casca", @"Cassius", @"Cicero", @"Cinna", @"Cinna the Poet", @"Citizens", @"Claudius", @"Clitus", @"Dardanius", @"Decius Brutus", @"First Citizen", @"First Commoner", @"First Soldier", @"Flavius", @"Fourth Citizen", @"Lepidus", @"Ligarius", @"Lucilius", @"Lucius", @"Marullus", @"Messala", @"Messenger", @"Metellus Cimber", @"Octavius", @"Pindarus", @"Poet", @"Popilius", @"Portia", @"Publius", @"Second Citizen", @"Second Commoner", @"Second Soldier", @"Servant", @"Soothsayer", @"Strato", @"Third Citizen", @"Third Soldier", @"Tintinius", @"Trebonius", @"Varro", @"Volumnius", @"Young Cato", nil];
@@ -111,7 +111,7 @@
     
 	play = [[Play alloc] init];
 	play.title = @"King Lear";
-	play.genre = @"Tragegy";
+	play.genre = @"Tragedy";
 	[dateComponents setYear:1605];
 	play.date = [calendar dateFromComponents:dateComponents];
     characters = [[NSArray alloc] initWithObjects:@"Captain", @"Cordelia", @"Curan", @"Doctor", @"Duke of Albany", @"Duke of Burgundy", @"Duke of Cornwall", @"Earl of Gloucester", @"Earl of Kent", @"Edgar", @"Edmund", @"Fool", @"Gentleman", @"Goneril", @"Herald", @"King of France", @"Knight", @"Lear", @"Messenger", @"Old Man", @"Oswald", @"Regan", @"Servant 1", @"Servant 2", @"Servant 3", nil];
@@ -120,7 +120,7 @@
     
 	play = [[Play alloc] init];
 	play.title = @"Othello";
-	play.genre = @"Tragegy";
+	play.genre = @"Tragedy";
 	[dateComponents setYear:1604];
 	play.date = [calendar dateFromComponents:dateComponents];
     characters = [[NSArray alloc] initWithObjects:@"Bianca", @"Brabantio", @"Cassio", @"Clown", @"Desdemona", @"Duke of Venice", @"Emilia", @"First Gentleman", @"First Musician", @"First Officer", @"First Senator", @"Fourth Gentleman", @"Gentleman", @"Gratiano", @"Herald", @"Iago", @"Lodovico, Kinsman to Brabantio", @"Messenger", @"Montano", @"Othello", @"Roderigo", @"Sailor", @"Second Gentleman", @"Second Senator", @"Third Gentleman", nil];
